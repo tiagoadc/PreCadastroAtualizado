@@ -1,0 +1,61 @@
+<div class="flex flex-col w-full  border-t-2 border-black  mt-4 ">
+
+
+
+    <div class="flex w-80 ml-24 mb-4  bg-black text-white">
+        <label for="a">Seção Final: Declarações</label>
+    </div>
+
+   
+
+    <div class="flex  flex-col ml-24 border border-black">
+        
+        <div class="flex mt-2 ml-2 ">
+            <p>Declaro que as informações prestadas neste formulário são verdadeiras, exatas, válidas, corretas e
+                completas. Estou ciente que o Banco</p>
+        </div>
+        <div class="flex  mt-2 ml-2">
+            <p>Pine S. A. e as Instituições Financeiras a ele ligadas ou por ele controladas poderão realizar o
+                tratamento dos dados informados neste</p>
+        </div>
+        <div class="flex  mt-2 ml-2">
+            <p>formulário para a correta e perfeita execução da contratação pretendida, para o cumprimento de obrigações
+                legais e regulatórias,</p>
+        </div>
+        <div class="flex  mt-2 ml-2">
+            <p>devendo-se observar a legislação aplicável, notadamente a Lei nº 13.709/2018 (“Lei de Proteção de
+                Dados”).</p>
+        </div>
+        <div>
+            <mat-checkbox class="example-margin mt-2 ml-2 mb-2 mr-4">De acordo
+            </mat-checkbox>
+
+            <mat-form-field style="width: 30%;" class="text-center">
+              
+                <mat-label>Responsável pelo preenchimento do formulário</mat-label>
+                <input type="text" required matInput [(ngModel)]="secao_f.responsavelPreenchimento">
+            </mat-form-field>
+
+            <span class="bg-gray-200 ml-4 ">Local e Data:</span>
+            
+            <mat-form-field style="width: 13%;" class="text-center ml-4">
+                
+                <input type="text" required [(ngModel)]="local"  matInput >
+                <mat-label >Local</mat-label>
+            </mat-form-field>
+
+            <mat-form-field  class="example-form-field ml-4 text-center">
+                <mat-label >Choose a date</mat-label>
+                <input matInput required [(ngModel)]="date" [matDatepicker]="datepicker" >
+                <mat-datepicker-toggle matSuffix [for]="datepicker"></mat-datepicker-toggle>
+                <mat-datepicker #datepicker>
+                  <mat-datepicker-actions>
+                    <button mat-button matDatepickerCancel>Cancel</button>
+                    <button mat-raised-button color="primary" matDatepickerApply>Apply</button>
+                  </mat-datepicker-actions>
+                </mat-datepicker>
+              </mat-form-field>
+           
+        </div>
+    </div>  
+</div>

@@ -1,0 +1,43 @@
+<div class="flex flex-col w-full border-t-2 border-black mt-4 ">
+
+    <div class="flex w-80 ml-24 mb-4  bg-black text-white">
+        <label for="a">Seção B: Contratação de Colaboradores Terceiros</label>
+    </div>
+
+    <div class="flex  justify-center items-center  ">
+        <mat-form-field style="width: 80%;" class="text-center">            
+            <mat-label >Nome do proffisional
+            </mat-label>
+            <input type="text" required name="nomeProfissional" matInput [(ngModel)]="secao_b.terceiros.nome">
+            
+
+        </mat-form-field>
+    </div>
+
+    <div class="flex  justify-center items-center  ">
+
+        <mat-form-field style="width: 39%;">
+            
+            <mat-label >CPF</mat-label>
+            <input type="text" required mask="000.000.000-00" name="cpf colaborador" matInput [(ngModel)]="secao_b.terceiros.cpf">
+            
+        </mat-form-field>
+
+        <mat-form-field style="width: 40%;" class="ml-2">            
+            <mat-label >RG</mat-label>
+
+            <input type="text" required mask="000.000.000-0" name="RGColaborador" matInput [(ngModel)]="secao_b.terceiros.rg">
+            
+        </mat-form-field>
+    </div>
+    <div class="flex  justify-center items-center  ">
+
+        <mat-form-field style="width: 80%;" class="text-center">
+            
+            <mat-label>Custo bruto relativo ao profissional terceiro</mat-label>
+            <input type="text" required mask="separator.2" name="nomeProfissional" matInput [(ngModel)]="secao_b.terceiros.custo">
+            
+        </mat-form-field>
+    </div>
+    
+</div>

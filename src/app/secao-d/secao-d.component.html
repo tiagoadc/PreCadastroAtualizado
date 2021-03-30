@@ -1,0 +1,234 @@
+<div class="flex flex-col w-full border-t-2 border-black mt-4 ">
+
+    <div class="flex w-80 ml-24 mb-4  bg-black text-white">
+        <label for="a">Seção D: Questões Éticas</label>
+    </div>
+
+    <div class="flex  justify-start ml-24 mb-2 underline ">
+        <p class="font-medium "> Relacionamento com o Fornecedor </p>
+    </div>
+
+    <div class="flex  justify-start ml-24  ">
+
+        <div class="flex flex-col w-full bg-gray-200 ">
+            <div class="bg-gray-200">
+                <p> A Contraparte, seus sócios, administradores e/ou diretores figuram ou figuraram como
+                    réus em algum processo administrativo, judicial e/ou socioambiental? </p>
+            </div>
+        </div>
+
+        <div class="flex flex-col w-full justify-center items-center ">
+
+            <section class="example-section">
+                <mat-radio-group [(ngModel)]="secao_d.etica.reus.resposta">
+                    <mat-radio-button class="example-margin mr-5" value= true >Sim</mat-radio-button>
+                    <mat-radio-button class="example-margin" value= false >Não</mat-radio-button>
+                </mat-radio-group>
+            </section>
+        </div>
+    </div>
+
+    <div class="flex ml-24 mt-2" *ngIf="secao_d.etica.reus.resposta == 'true'">
+        <div class="bg-gray-200">
+            <p>Caso afirmativo, descreva o motivo, em qual esfera e as partes envolvidas.</p>
+        </div>
+
+    </div>
+
+    <div class="flex w-full justify-center items-center  mt-2" *ngIf="secao_d.etica.reus.resposta == 'true'">
+
+        <mat-form-field style="width: 80%;" class="text-center">
+            <mat-label>Digite aqui</mat-label>
+            <textarea type="text" required name="justificativa" matInput
+                [(ngModel)]="secao_d.etica.reus.justificativa"></textarea>
+        </mat-form-field>
+
+    </div>
+
+    <div class="flex  justify-start ml-24 mt-2  ">
+
+        <div class="flex flex-col w-full bg-gray-200 ">
+            <div class="bg-gray-200">
+                <p> Há algum vínculo pessoal entre os sócios, administradores e colaboradores da Fornecedor / Parceiro
+                    com os sócios, administradores e colaboradores do Conglomerado Pine? </p>
+            </div>
+        </div>
+
+        <div class="flex flex-col w-full justify-center items-center ">
+
+            <section class="example-section">
+                <mat-radio-group [(ngModel)]="secao_d.etica.vinculoPessoal.resposta">
+                    <mat-radio-button class="example-margin mr-5" value= true>Sim</mat-radio-button>
+                    <mat-radio-button class="example-margin" value= false>Não</mat-radio-button>
+                </mat-radio-group>
+            </section>
+        </div>
+    </div>
+
+    <div class="flex ml-24 mt-2" *ngIf="secao_d.etica.vinculoPessoal.resposta == 'true'">
+        <div class="bg-gray-200">
+            <p>Em caso afirmativo, relacione e descreva qual o tipo de vínculo.</p>
+        </div>
+    </div>
+
+    <div class="flex w-full justify-center items-center  mt-2" *ngIf="secao_d.etica.vinculoPessoal.resposta == 'true'">
+
+        <mat-form-field style="width: 80%;" class="text-center">
+            <mat-label>Digite aqui</mat-label>
+            <textarea type="text" required name="justificativa" matInput
+                [(ngModel)]="secao_d.etica.vinculoPessoal.justificativa"></textarea>
+        </mat-form-field>
+
+    </div>
+
+    <div class="flex  justify-start ml-24 mt-2 ">
+
+        <div class="flex flex-col w-full bg-gray-200 ">
+            <div class="bg-gray-200">
+                <p> Possui parentesco com algum servidor ou ex-servidor público? </p>
+            </div>
+        </div>
+
+        <div class="flex flex-col w-full justify-center items-center ">
+
+            <section class="example-section">
+
+                <mat-radio-group [(ngModel)]="secao_d.etica.parentescoServidorPublico.resposta">
+                    <mat-radio-button class="example-margin mr-5" value= true>Sim</mat-radio-button>
+                    <mat-radio-button class="example-margin" value= false>Não</mat-radio-button>
+                </mat-radio-group>
+            </section>
+        </div>
+    </div>
+
+    <div class="flex ml-24 mt-2" *ngIf="secao_d.etica.parentescoServidorPublico.resposta == 'true'">
+        <div class="bg-gray-200">
+            <p>Em caso afirmativo, identifique-o.</p>
+        </div>
+    </div>
+
+    <div class="flex w-full justify-center items-center  mt-2"
+        *ngIf="secao_d.etica.parentescoServidorPublico.resposta == 'true'">
+
+        <mat-form-field style="width: 80%;" class="text-center">
+            <mat-label>Digite aqui</mat-label>
+            <textarea type="text" required name="justificativa" matInput
+                [(ngModel)]="secao_d.etica.parentescoServidorPublico.justificativa"></textarea>
+        </mat-form-field>
+
+    </div>
+
+    <div class="flex  justify-start ml-24 mt-2 ">
+
+        <div class="flex flex-col w-full bg-gray-200 ">
+            <div class="bg-gray-200">
+                <p> Os principais executivos exercem alguma atividade de representação ou governança (cargos em
+                    Conselhos,
+                    Comissões, Associações, etc) em outras instituições e/ou entidades? </p>
+            </div>
+        </div>
+
+        <div class="flex flex-col w-full justify-center items-center ">
+
+            <section class="example-section">
+
+                <mat-radio-group [(ngModel)]="secao_d.etica.atividadeOutrasInstituicoes.resposta">
+                    <mat-radio-button class="example-margin mr-5" value= true>Sim</mat-radio-button>
+                    <mat-radio-button class="example-margin" value= false>Não</mat-radio-button>
+                </mat-radio-group>
+            </section>
+        </div>
+    </div>
+
+    <div class="flex ml-24 mt-2" *ngIf="secao_d.etica.atividadeOutrasInstituicoes.resposta == 'true'">
+        <div class="bg-gray-200">
+            <p>Em caso afirmativo, relacione e descreva qual o tipo de vínculo.</p>
+        </div>
+    </div>
+
+    <div class="flex w-full justify-center items-center  mt-2"
+        *ngIf="secao_d.etica.atividadeOutrasInstituicoes.resposta == 'true'">
+
+        <mat-form-field style="width: 80%;" class="text-center">
+            <mat-label>Digite aqui</mat-label>
+            <textarea type="text" required name="justificativa" matInput
+                [(ngModel)]="secao_d.etica.atividadeOutrasInstituicoes.justificativa"></textarea>
+        </mat-form-field>
+
+    </div>
+
+
+
+    <div class="flex  justify-start ml-24 mb-2 mt-2">
+
+        <div class="bg-gray-200">
+            <p>Informar 3 principais clientes. </p>
+        </div>
+    </div>
+
+    <ul>
+        <li>
+            <div class="flex  justify-center items-center  ">
+
+                <mat-form-field style="width: 80%;" class="text-center">
+                    <mat-label>1°</mat-label>
+                    <input type="text" required matInput [(ngModel)]="secao_d.etica.principalCliente1">
+                </mat-form-field>
+            </div>
+
+            <div class="flex  justify-center items-center  ">
+
+                <mat-form-field style="width: 80%;" class="text-center">
+                    <mat-label>2°</mat-label>
+                    <input type="text" required matInput [(ngModel)]="secao_d.etica.principalCliente2">
+                </mat-form-field>
+            </div>
+
+            <div class="flex  justify-center items-center  ">
+
+                <mat-form-field style="width: 80%;" class="text-center">
+                    <mat-label>3°</mat-label>
+                    <input type="text" required matInput [(ngModel)]="secao_d.etica.principalCliente3">
+                </mat-form-field>
+            </div>
+        </li>
+    </ul>
+
+
+
+    <div class="flex  justify-start ml-24 mt-2 ">
+
+        <div class="flex flex-col w-full bg-gray-200 ">
+            <div class="bg-gray-200">
+                <p> Já prestou serviços ao Banco Pine? </p>
+            </div>
+        </div>
+
+        <div class="flex flex-col w-full justify-center items-center ">
+
+            <section class="example-section">
+                <mat-radio-group [(ngModel)]="secao_d.etica.jaPrestouServicos.resposta">
+                    <mat-radio-button class="example-margin mr-5" value= true >Sim</mat-radio-button>
+                    <mat-radio-button class="example-margin" value= false >Não</mat-radio-button>
+                </mat-radio-group>
+            </section>
+        </div>
+    </div>
+
+    <div class="flex ml-24 mt-2" *ngIf="secao_d.etica.jaPrestouServicos.resposta == 'true'">
+        <div class="bg-gray-200">
+            <p>Em caso afirmativo, informar o período.</p>
+        </div>
+    </div>
+
+    <div class="flex w-full justify-center items-center  mt-2"
+        *ngIf="secao_d.etica.jaPrestouServicos.resposta == 'true'">
+
+        <mat-form-field style="width: 80%;" class="text-center">
+            <mat-label>Digite aqui</mat-label>
+            <textarea type="text" required name="justificativa" matInput
+                [(ngModel)]="secao_d.etica.jaPrestouServicos.justificativa"></textarea>
+        </mat-form-field>
+
+    </div>
+</div>

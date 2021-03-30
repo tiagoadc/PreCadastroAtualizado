@@ -1,0 +1,226 @@
+<!--Conteúdo-->
+<main>
+    <div class="flex w-full flex-col  mt-28">        
+
+        <div class="flex max-h-16 justify-center items-center ">
+            <mat-form-field class=" m-2 text-center " style="width: 80%;">
+                <mat-label >Empresa do Grupo Pine</mat-label>
+                
+                
+                <mat-select required [(ngModel)]="secao_a.empresa.codigo">
+                    <mat-option value="1">BANCO PINE S.A. - CNPJ: 62.144.175/0001-20 </mat-option>
+                    <mat-option value="2">PINE CORRETORA DE SEGUROS LTDA - CNPJ: 27.107.955/0001-07</mat-option>
+                    <mat-option value="3">PINE INVESTIMENTOS DISTR.TITS.VAL.MO - CNPJ: 92.236.777/0001-78</mat-option>
+                    <mat-option value="4">PINE PLANEJAMENTO E SERVIÇO LTDA - CNPJ: 16.417.799/0001-56</mat-option>
+                    <mat-option value="5">PINE ASSESSORIA E CONSULTORIA LTDA - CNPJ: 14.802.384/0001-70 </mat-option>
+                    <mat-option value="6">PINE ATIVOS IMOBILIÁRIOS SPE LTDA - CNPJ: 32.196.276/0001-83</mat-option>
+                </mat-select>
+            </mat-form-field>
+
+        </div>
+
+        <div class="flex  justify-center items-center  ">
+            <mat-form-field class=" m-2 text-center " style="width: 80%;">                
+                <mat-label >Tipo de Cadastro</mat-label>
+                
+                <mat-select required [(ngModel)]="secao_a.tipoCadastro.id">
+                    <mat-option value="1">ATUALIZAÇÃO CADASTRAL</mat-option>
+                    <mat-option value="2">CADASTRO FILIAL</mat-option>
+                    <mat-option value="3">NOVO CADASTRO</mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+
+        <div class="flex  justify-center items-center  ">
+
+            <mat-form-field style="width: 80%;" class="text-center">
+                
+                <mat-label >Razão Social</mat-label>
+                <input type="text" required name="RazaoSocial" matInput [(ngModel)]="secao_a.nome">
+               
+
+            </mat-form-field>
+        </div>
+
+        <div class="flex  justify-center items-center  ">
+            <mat-form-field style="width: 80%;" class="text-center">                
+                <mat-label >CNPJ/CPF</mat-label>
+                <input type="text" required mask="CPF_CNPJ" name="CNPJ/CPF" matInput [(ngModel)]="secao_a.cgccpf">               
+            </mat-form-field>
+        </div>
+
+        <div class="flex  justify-center items-center  ">
+
+            <mat-form-field style="width: 80%;" class="text-center">               
+                <mat-label >Endereço</mat-label>
+                <input type="text" required name="Endereco" matInput [(ngModel)]="secao_a.endereco">                
+            </mat-form-field>
+        </div>
+
+        <div class="flex  justify-center items-center  ">
+
+            <mat-form-field style="width: 20%;">                
+                <mat-label >Numero</mat-label>
+                <input type="text" required mask="separator.2" name="numero" matInput [(ngModel)]="secao_a.numero">                
+            </mat-form-field>
+
+            <mat-form-field style="width: 29%;" class="ml-2">                
+                <mat-label >Complemento</mat-label>
+                <input type="text" required name="complemento" matInput [(ngModel)]="secao_a.complemento">                                
+            </mat-form-field>
+
+            <mat-form-field style="width: 30%;" class="ml-2">                
+                <mat-label>Bairro</mat-label>
+                <input type="text" required name="Bairro" matInput [(ngModel)]="secao_a.bairro">                
+            </mat-form-field>
+        </div>
+
+        <div class="flex  justify-center items-center  ">
+
+            <mat-form-field style="width: 20%;">
+                
+                <mat-label >estado</mat-label>                
+                <mat-select required [(ngModel)]="secao_a.uf"  >
+                    <mat-option *ngFor="let item of ESTADOS" value="{{item.uf}}">{{item.uf}}</mat-option>                    
+                </mat-select>
+            </mat-form-field>
+
+            <mat-form-field style="width: 29%;" class="ml-2">                
+                <mat-label >Município</mat-label>
+                <input type="text" required name="cidade" matInput [(ngModel)]="secao_a.cidade">                                
+            </mat-form-field>
+
+            <mat-form-field style="width: 30%;" class="ml-2">                
+                <mat-label >Cep</mat-label>
+                <input type="text" required mask="00.000-000" name="Cep" matInput [(ngModel)]="secao_a.cep">                                
+            </mat-form-field>
+        </div>
+
+        <div class="flex  justify-center items-center  ">
+
+            <mat-form-field style="width: 80%;" class="text-center">                
+                <mat-label >Telefone</mat-label>
+                <input type="text" required mask="(00) 00000-0000" name="telefone" matInput [(ngModel)]="secao_a.telefone">               
+            </mat-form-field>
+        </div>
+
+        <div class="flex  justify-center items-center exemple-container ">
+            <mat-form-field style="width: 80%;" class="text-center">
+                <mat-label>E-mail</mat-label>
+                <input matInput placeholder="pat@example.com" [formControl]="email" required
+                (blur)="addEmail()">
+                <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
+            </mat-form-field>
+        </div>
+
+        <div class="flex  justify-center items-center  ">
+
+            <mat-form-field style="width: 80%;" class="text-center">                
+                <mat-label >Quantidade total de colaboradores</mat-label>
+                <input type="text" required mask="separator.2" name="quantColaboradores" matInput [(ngModel)]="secao_a.quantColaboradores">                               
+            </mat-form-field>
+        </div>
+
+        <div class="flex  justify-center items-center  ">
+
+            <mat-form-field style="width: 80%;" class="text-center">                
+                <mat-label>Descrever um breve histórico do fornecedor</mat-label>
+                <input type="text" required name="hisorico" matInput [(ngModel)]="secao_a.historico">                
+            </mat-form-field>
+        </div>
+
+        <div class="flex  justify-center items-center  ">
+
+            <mat-form-field style="width: 80%;" class="text-center">                
+                <mat-label >Quais são os principais produtos ou serviços oferecidos pelo fornecedor / Parceiro?</mat-label>
+                <textarea matInput required [(ngModel)]="secao_a.principaisProdutos"></textarea>                
+            </mat-form-field>
+        </div>
+
+        <div class="flex  justify-center items-center  ">
+
+            <mat-form-field style="width: 80%;" class="text-center">                
+                <mat-label >Qual produto ou serviço objeto da contratação?</mat-label>
+                <input type="text" required name="telefone" matInput [(ngModel)]="secao_a.objeto">              
+            </mat-form-field>
+        </div>
+
+        <div class="flex mt-6 ml-24 mb-2 font-medium underline">
+            Dados do responsavel para contato
+        </div>
+
+        <div class="flex  justify-center items-center  ">
+
+            <mat-form-field style="width: 80%;" class="text-center">               
+                <mat-label >Nome do responsável para contato</mat-label>
+                <input type="text" required name="telefone" matInput [(ngModel)]="secao_a.contato.nome">               
+            </mat-form-field>
+        </div>
+
+        <div class="flex  justify-center items-center  ">
+
+            <mat-form-field style="width: 80%;" class="text-center">                
+                <mat-label >Cargo do responsável para contato</mat-label>
+                <input type="text" required name="telefone" matInput [(ngModel)]="secao_a.contato.cargo">                
+            </mat-form-field>
+        </div>
+
+        <div class="flex  justify-center items-center  ">
+
+            <mat-form-field style="width: 80%;" class="text-center">                
+                <mat-label >Telefone do responsável para contato</mat-label>
+                <input type="text" required mask= "(00) 00000-0000" name="telefone" matInput [(ngModel)]="secao_a.contato.telefone">                
+            </mat-form-field>
+        </div>
+
+        <div class="flex  justify-center items-center exemple-container ">
+            <mat-form-field style="width: 80%;" class="text-center">
+                <mat-label>E-mail do responsável para contato</mat-label>
+                <input matInput placeholder="pat@example.com" [formControl]="emailContato" required
+                (blur)="addEmail()">
+                <mat-error *ngIf="email.invalid">{{getErrorMessageContato()}}</mat-error>
+            </mat-form-field>
+        </div>
+
+        <div class="flex mt-6 ml-24 mb-4 font-medium underline">
+            Dados para Pagamento
+        </div>
+
+        <div class="flex  justify-center items-center  ">
+
+            <mat-form-field style="width: 20%;">                
+                <mat-label >Banco</mat-label>
+                <input type="text" required name="numero" matInput [(ngModel)]="secao_a.banco">               
+            </mat-form-field>
+
+            <mat-form-field style="width: 29%;" class="ml-2">                
+                <mat-label >Agência</mat-label>
+                <input type="text" required mask="0000" name="complemento" matInput [(ngModel)]="secao_a.agencia">                
+            </mat-form-field>
+
+            <mat-form-field style="width: 30%;" class="ml-2">                
+                <mat-label >Conta</mat-label>
+                <input type="text" required mask="0000000-0" name="Bairro" matInput [(ngModel)]="secao_a.conta">                
+            </mat-form-field>
+        </div>
+
+        <div class="flex  justify-center items-center  ">
+
+            <mat-form-field style="width: 80%;" class="text-center">               
+                <mat-label >Favorecido contato</mat-label>
+                <input type="text" required name="telefone" matInput [(ngModel)]="secao_a.favorecido.nome">                
+            </mat-form-field>
+        </div>
+
+        <div class="flex  justify-center items-center  ">
+
+            <mat-form-field style="width: 80%;" class="text-center">                
+                <mat-label>CNPJ/CPF</mat-label>
+                <input  type="text" required mask="CPF_CNPJ" name="telefone" matInput [(ngModel)]="secao_a.favorecido.cgccpf">                
+            </mat-form-field>
+        </div>       
+    </div>
+</main>
+
+
+
