@@ -181,12 +181,37 @@ export class SecaoEComponent implements OnInit {
   }
 
   cleanFilesDocumento() {
+  
     this.checkDocumento = !this.checkDocumento
+    if (this.filesDocumento.length > 0) {
+      if (!this.checkDocumento) {
+        if (confirm(" Ao desmarcar os checkbox, os arquivos serão apagados")) {
+
+          if (!this.checkDocumento) {
+            ELEMENT_DATA_DOCUMENTO.splice(0, ELEMENT_DATA_DOCUMENTO.length)
+            this.filesDocumento.splice(0, this.filesDocumento.length)
+            this.refreshTableSorceFileDocumento()
+            this.checkDocumento = !this.checkDocumento
+          }
+        }
+        else {
+          this.checkDocumento = false
+        }
+      }
+      else {
+        this.checkDocumento = !this.checkDocumento
+      }
+    }
+    else {
+      this.checkDocumento = !this.checkDocumento
+    }
+
+   /* this.checkDocumento = !this.checkDocumento
     if (!this.checkDocumento) {
       ELEMENT_DATA_DOCUMENTO.splice(0, ELEMENT_DATA_DOCUMENTO.length)
-
+      this.filesDocumento.splice(0, this.filesDocumento.length)
       this.refreshTableSorceFileDocumento()
-    }
+    } */
   }
   refreshTableSorceFileDocumento() {
     this.dataSourceDocumento = new MatTableDataSource<ElementDocumento>(ELEMENT_DATA_DOCUMENTO);
@@ -198,6 +223,25 @@ export class SecaoEComponent implements OnInit {
 
       if (this.secao_e.segurancaInformacao.impactoIndisponibilidade.resposta == 'false' || this.secao_e.segurancaInformacao.impactoIndisponibilidade.resposta == false)
       this.secao_e.segurancaInformacao.impactoIndisponibilidade.justificativa = ''
+  }
+
+  cleanDados(){
+    this.cleanJustificativa()
+    this.dadosSensiveisChech()
+    this.secao_e.segurancaInformacao.dadoInseridoNaPlataforma = false
+    this.secao_e.segurancaInformacao.quaisDadosProcessados = ''
+    this.secao_e.segurancaInformacao.instaladoNasDependencias.id = ''
+    this.secao_e.segurancaInformacao.instaladoNasDependencias.descricao = ''
+    this.secao_e.segurancaInformacao.dadosSensiveis.resposta = ''
+    this.secao_e.segurancaInformacao.modeloNuvem.id = ''
+    this.secao_e.segurancaInformacao.modeloNuvem.descricao = ''
+    this.secao_e.segurancaInformacao.paisDados = ''
+    this.secao_e.segurancaInformacao.impactoIndisponibilidade.resposta = ''
+    this.secao_e.segurancaInformacao.impactoIndisponibilidade.justificativa = ''
+    ELEMENT_DATA_DOCUMENTO.splice(0, ELEMENT_DATA_DOCUMENTO.length)
+    this.filesDocumento.splice(0, this.filesDocumento.length)
+    this.checkDocumento = false
+    this.refreshTableSorceFileDocumento()
   }
 
 }

@@ -21,11 +21,12 @@ export class AppComponent {
   secao_e: any
   secao_f: any
   junto: any
-  token: any = {title: 'Angular POST Request Example'}
+  token: any 
   chave: boolean
 
   constructor(private apiServie: ApiService) {
-    apiServie.PostToken(this.token)
+    this.apiServie.getChave()
+    
     
   }
 
@@ -60,7 +61,7 @@ export class AppComponent {
       alert(revisarCampos)
     }
     else {
-      console.log(validate.formatJson())
+      //console.log(validate.formatJson())
       alert("Cadastro Realizado com Sucesso!")
     }
    

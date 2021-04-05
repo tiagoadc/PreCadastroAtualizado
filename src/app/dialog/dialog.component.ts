@@ -10,7 +10,7 @@ export interface DialogData {
     cargo: string;
     participacao: number;
 
-  
+    
  
 }
 
@@ -21,6 +21,7 @@ export interface DialogData {
 })
 export class DialogComponent  {
   
+  btnDesabilitado: boolean = true
   
   constructor(
     public dialogRef: MatDialogRef<DialogComponent>,
@@ -32,5 +33,21 @@ export class DialogComponent  {
     
     this.dialogRef.close();
   }    
+
+  disabled(){
+    if(
+    this.data.nome != null &&
+    this.data.cgccpf != null&& 
+    this.data.nacionalidade != null&&
+    this.data.cargo != null &&
+    this.data.participacao != null )
+    {
+      return false
+    }
+    else{
+      return true
+    }
+
+  }
 
 }

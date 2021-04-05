@@ -1,6 +1,11 @@
 <!--Conteúdo-->
 <main>
-    <div class="flex w-full flex-col  mt-28">        
+
+    
+    <div class="flex w-full flex-col border-2 border-black  mt-28">   
+        <div class="flex w-80 ml-24 mb-4  bg-black text-white">
+            <label for="a">Seção A: Dados Gerais</label>
+        </div>     
 
         <div class="flex max-h-16 justify-center items-center ">
             <mat-form-field class=" m-2 text-center " style="width: 80%;">
@@ -79,7 +84,7 @@
 
             <mat-form-field style="width: 20%;">
                 
-                <mat-label >estado</mat-label>                
+                <mat-label >Estado</mat-label>                
                 <mat-select required [(ngModel)]="secao_a.uf"  >
                     <mat-option *ngFor="let item of ESTADOS" value="{{item.uf}}">{{item.uf}}</mat-option>                    
                 </mat-select>
@@ -132,7 +137,7 @@
         <div class="flex  justify-center items-center  ">
 
             <mat-form-field style="width: 80%;" class="text-center">                
-                <mat-label >Quais são os principais produtos ou serviços oferecidos pelo fornecedor / Parceiro?</mat-label>
+                <mat-label >Quais são os principais produtos ou serviços oferecidos pelo fornecedor / parceiro?</mat-label>
                 <textarea matInput required [(ngModel)]="secao_a.principaisProdutos"></textarea>                
             </mat-form-field>
         </div>
@@ -146,7 +151,7 @@
         </div>
 
         <div class="flex mt-6 ml-24 mb-2 font-medium underline">
-            Dados do responsavel para contato
+            Dados do responsável para contato
         </div>
 
         <div class="flex  justify-center items-center  ">
@@ -207,7 +212,7 @@
         <div class="flex  justify-center items-center  ">
 
             <mat-form-field style="width: 80%;" class="text-center">               
-                <mat-label >Favorecido contato</mat-label>
+                <mat-label >Favorecido </mat-label>
                 <input type="text" required name="telefone" matInput [(ngModel)]="secao_a.favorecido.nome">                
             </mat-form-field>
         </div>

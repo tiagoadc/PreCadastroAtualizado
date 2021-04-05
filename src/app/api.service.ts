@@ -1,4 +1,5 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
 import { EventEmitter, Injectable } from '@angular/core';
 
 const CHAVE = []
@@ -14,6 +15,7 @@ emitirSecao = new EventEmitter<any>();
 api_URL = "https://jsonplaceholder.typicode.com/posts";
 api_Token = "https://jsonplaceholder.typicode.com/posts";
 chave: any
+chaveWebConfig: any
 
 
 postData: any
@@ -30,7 +32,7 @@ postData: any
       .subscribe(
         data => this.postData = JSON.stringify(data),
           error => alert(error.toString()),
-          () => console.log("acesso a webapi post ok..." , this.postData)
+          //() => console.log("acesso a webapi post ok..." , this.postData)
          
        );      
   }
@@ -41,10 +43,16 @@ postData: any
       data =>  this.chave = JSON.stringify(data),
           
           error => alert(error.toString()),
-          () =>   console.log("acesso a webapi post ok..." , this.chave),
+          //() =>   console.log(" POST TOKEN acesso a webapi post ok..." , this.chave),
           
          
-       ); 
-         
+       );   
  }
+   getChave(){
+    this.http.get('assets/webconfig.txt').subscribe(data => {
+      this.PostToken(data)
+      //console.log(data);
+  })
+  
+   }
 }

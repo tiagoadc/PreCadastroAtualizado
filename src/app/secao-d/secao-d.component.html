@@ -1,4 +1,4 @@
-<div class="flex flex-col w-full border-t-2 border-black mt-4 ">
+<div class="flex flex-col w-full border-2 border-black mt-4 ">
 
     <div class="flex w-80 ml-24 mb-4  bg-black text-white">
         <label for="a">Seção D: Questões Éticas</label>
@@ -26,19 +26,12 @@
                 </mat-radio-group>
             </section>
         </div>
-    </div>
-
-    <div class="flex ml-24 mt-2" *ngIf="secao_d.etica.reus.resposta == 'true'">
-        <div class="bg-gray-200">
-            <p>Caso afirmativo, descreva o motivo, em qual esfera e as partes envolvidas.</p>
-        </div>
-
-    </div>
+    </div>   
 
     <div class="flex w-full justify-center items-center  mt-2" *ngIf="secao_d.etica.reus.resposta == 'true'">
 
         <mat-form-field style="width: 80%;" class="text-center">
-            <mat-label>Digite aqui</mat-label>
+            <mat-label>Descreva o motivo, em qual esfera e as partes envolvidas.</mat-label>
             <textarea type="text" required name="justificativa" matInput
                 [(ngModel)]="secao_d.etica.reus.justificativa"></textarea>
         </mat-form-field>
@@ -64,17 +57,11 @@
             </section>
         </div>
     </div>
-
-    <div class="flex ml-24 mt-2" *ngIf="secao_d.etica.vinculoPessoal.resposta == 'true'">
-        <div class="bg-gray-200">
-            <p>Em caso afirmativo, relacione e descreva qual o tipo de vínculo.</p>
-        </div>
-    </div>
-
+    
     <div class="flex w-full justify-center items-center  mt-2" *ngIf="secao_d.etica.vinculoPessoal.resposta == 'true'">
 
         <mat-form-field style="width: 80%;" class="text-center">
-            <mat-label>Digite aqui</mat-label>
+            <mat-label>Relacione e descreva qual o tipo de vínculo.</mat-label>
             <textarea type="text" required name="justificativa" matInput
                 [(ngModel)]="secao_d.etica.vinculoPessoal.justificativa"></textarea>
         </mat-form-field>
@@ -100,18 +87,12 @@
             </section>
         </div>
     </div>
-
-    <div class="flex ml-24 mt-2" *ngIf="secao_d.etica.parentescoServidorPublico.resposta == 'true'">
-        <div class="bg-gray-200">
-            <p>Em caso afirmativo, identifique-o.</p>
-        </div>
-    </div>
-
+   
     <div class="flex w-full justify-center items-center  mt-2"
         *ngIf="secao_d.etica.parentescoServidorPublico.resposta == 'true'">
 
         <mat-form-field style="width: 80%;" class="text-center">
-            <mat-label>Digite aqui</mat-label>
+            <mat-label>Identifique-o.</mat-label>
             <textarea type="text" required name="justificativa" matInput
                 [(ngModel)]="secao_d.etica.parentescoServidorPublico.justificativa"></textarea>
         </mat-form-field>
@@ -140,17 +121,11 @@
         </div>
     </div>
 
-    <div class="flex ml-24 mt-2" *ngIf="secao_d.etica.atividadeOutrasInstituicoes.resposta == 'true'">
-        <div class="bg-gray-200">
-            <p>Em caso afirmativo, relacione e descreva qual o tipo de vínculo.</p>
-        </div>
-    </div>
-
     <div class="flex w-full justify-center items-center  mt-2"
         *ngIf="secao_d.etica.atividadeOutrasInstituicoes.resposta == 'true'">
 
         <mat-form-field style="width: 80%;" class="text-center">
-            <mat-label>Digite aqui</mat-label>
+            <mat-label>Relacione e descreva qual o tipo de vínculo.</mat-label>
             <textarea type="text" required name="justificativa" matInput
                 [(ngModel)]="secao_d.etica.atividadeOutrasInstituicoes.justificativa"></textarea>
         </mat-form-field>
@@ -171,7 +146,7 @@
             <div class="flex  justify-center items-center  ">
 
                 <mat-form-field style="width: 80%;" class="text-center">
-                    <mat-label>1°</mat-label>
+                    <mat-label>1° Cliente</mat-label>
                     <input type="text" required matInput [(ngModel)]="secao_d.etica.principalCliente1">
                 </mat-form-field>
             </div>
@@ -179,7 +154,7 @@
             <div class="flex  justify-center items-center  ">
 
                 <mat-form-field style="width: 80%;" class="text-center">
-                    <mat-label>2°</mat-label>
+                    <mat-label>2° Cliente</mat-label>
                     <input type="text" required matInput [(ngModel)]="secao_d.etica.principalCliente2">
                 </mat-form-field>
             </div>
@@ -187,7 +162,7 @@
             <div class="flex  justify-center items-center  ">
 
                 <mat-form-field style="width: 80%;" class="text-center">
-                    <mat-label>3°</mat-label>
+                    <mat-label>3° Cliente</mat-label>
                     <input type="text" required matInput [(ngModel)]="secao_d.etica.principalCliente3">
                 </mat-form-field>
             </div>
@@ -206,7 +181,7 @@
 
         <div class="flex flex-col w-full justify-center items-center ">
 
-            <section class="example-section">
+            <section class="example-section mb-2">
                 <mat-radio-group [(ngModel)]="secao_d.etica.jaPrestouServicos.resposta">
                     <mat-radio-button class="example-margin mr-5" value= true >Sim</mat-radio-button>
                     <mat-radio-button class="example-margin" value= false >Não</mat-radio-button>
@@ -215,17 +190,11 @@
         </div>
     </div>
 
-    <div class="flex ml-24 mt-2" *ngIf="secao_d.etica.jaPrestouServicos.resposta == 'true'">
-        <div class="bg-gray-200">
-            <p>Em caso afirmativo, informar o período.</p>
-        </div>
-    </div>
-
-    <div class="flex w-full justify-center items-center  mt-2"
+    <div class="flex w-full justify-center items-center  mt-2 mb-2"
         *ngIf="secao_d.etica.jaPrestouServicos.resposta == 'true'">
 
         <mat-form-field style="width: 80%;" class="text-center">
-            <mat-label>Digite aqui</mat-label>
+            <mat-label>Informar o período.</mat-label>
             <textarea type="text" required name="justificativa" matInput
                 [(ngModel)]="secao_d.etica.jaPrestouServicos.justificativa"></textarea>
         </mat-form-field>

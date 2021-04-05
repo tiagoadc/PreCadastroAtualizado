@@ -1,35 +1,39 @@
 <div mat-dialog-content>
 
-    <mat-form-field>
-      <mat-label>Nome/Nome Empresarial</mat-label>
-      <input matInput required [(ngModel)]="data.nome">
-    </mat-form-field>
+  <mat-form-field>
+    <mat-label>Nome/Nome Empresarial</mat-label>
+    <input matInput required [(ngModel)]="data.nome">
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>CPF/CNPJ</mat-label>
+    <input required mask="CPF_CNPJ" matInput [(ngModel)]="data.cgccpf">
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Nacionalidade</mat-label>
+    <input matInput required [(ngModel)]="data.nacionalidade">
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Cargo</mat-label>
+    <input matInput required [(ngModel)]="data.cargo">
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Participação acionária (%)</mat-label>
+    <input matInput required  mask="separator.2" [(ngModel)]="data.participacao">
+  </mat-form-field>
+
+</div>
+<div mat-dialog-actions class="flex flex-row">
+
+  <button mat-button (click)="onNoClick()">Cancelar</button>
+
+  <button type="button" [disabled]="disabled()"
+   mat-button [mat-dialog-close]="data" >Adicionar</button>
   
-    <mat-form-field>
-      <mat-label>CPF/CNPJ</mat-label>
-      <input required mask="CPF_CNPJ" matInput [(ngModel)]="data.cgccpf">
-    </mat-form-field>
-  
-    <mat-form-field>
-      <mat-label>Nacionalidade</mat-label>
-      <input matInput required [(ngModel)]="data.nacionalidade">
-    </mat-form-field>
-  
-    <mat-form-field>
-      <mat-label>Cargo</mat-label>
-      <input matInput required [(ngModel)]="data.cargo">
-    </mat-form-field>
-  
-    <mat-form-field>
-      <mat-label>Participação acionária (%)</mat-label>
-      <input matInput required suffix="%" mask="separator.2" [(ngModel)]="data.participacao">
-    </mat-form-field>
-  
-  </div>
-  <div mat-dialog-actions class="flex flex-row">
-    
-      <button mat-button (click)="onNoClick()">Cancelar</button>   
-      <button *ngIf="data.nome != null && data.cgccpf != null && data.nacionalidade != null  && data.cargo != null && data.participacao != null "
-       mat-button [mat-dialog-close]="data" cdkFocusInitial>dicionar</button>
-    
-  </div>
+
+</div>
+
+<!-- data.nome != null && data.cgccpf != null && data.nacionalidade != null  && data.cargo != null && data.participacao != null -->

@@ -92,8 +92,8 @@ export class SecaoCComponent implements OnInit {
         procuracao: [],
         qsc: [],
         checkDocumento: '',
-        checkComprovante: '' ,
-        checkProcuracao: '' ,
+        checkComprovante: '',
+        checkProcuracao: '',
         checkQsc: '',
 
       }
@@ -118,7 +118,7 @@ export class SecaoCComponent implements OnInit {
 
   checkDocumento: boolean = false
   checkComprovante: any = false
-  checkProcuracao: any =  false
+  checkProcuracao: any = false
   checkQsc: any = false
   info: any
   infoArquivo = 0
@@ -129,7 +129,7 @@ export class SecaoCComponent implements OnInit {
 
   ngOnInit(): void {
     this.apiService.emitirSecao.subscribe(
-      ()=> this.getSecaoC()
+      () => this.getSecaoC()
     )
 
   }
@@ -340,37 +340,100 @@ export class SecaoCComponent implements OnInit {
 
   cleanFilesDocumento() {
     this.checkDocumento = !this.checkDocumento
-    if (!this.checkDocumento) {
-      ELEMENT_DATA_DOCUMENTO.splice(0, ELEMENT_DATA_DOCUMENTO.length)
-      this.filesDocumento.splice(0, this.filesDocumento.length)
-      this.refreshTableSorceFileDocumento()
+    if (this.filesDocumento.length > 0) {
+      if (!this.checkDocumento) {
+        if (confirm(" Ao desmarcar os checkbox, os arquivos serão apagados")) {
+
+          if (!this.checkDocumento) {
+            ELEMENT_DATA_DOCUMENTO.splice(0, ELEMENT_DATA_DOCUMENTO.length)
+            this.filesDocumento.splice(0, this.filesDocumento.length)
+            this.refreshTableSorceFileDocumento()
+            this.checkDocumento = !this.checkDocumento
+          }
+        }
+        else {
+          this.checkDocumento = false
+        }
+      }
+      else {
+        this.checkDocumento = !this.checkDocumento
+      }
+    }
+    else {
+      this.checkDocumento = !this.checkDocumento
     }
   }
 
   cleanFilesComprovante() {
     this.checkComprovante = !this.checkComprovante
-    if (!this.checkComprovante) {
-      ELEMENT_DATA_COMPROVANTE.splice(0, ELEMENT_DATA_COMPROVANTE.length)
-      this.filesComprovante.splice(0, this.filesComprovante.length)
-      this.refreshTableSorceFileComprovante()
+    if (this.filesComprovante.length > 0) {
+      if (!this.checkComprovante) {
+        if (confirm(" Ao desmarcar os checkbox, os arquivos serão apagados")) {
+
+          if (!this.checkComprovante) {
+            ELEMENT_DATA_COMPROVANTE.splice(0, ELEMENT_DATA_COMPROVANTE.length)
+            this.filesComprovante.splice(0, this.filesComprovante.length)
+            this.refreshTableSorceFileComprovante()
+            this.checkComprovante = !this.checkComprovante
+          }
+        }
+        else {
+          this.checkComprovante = false
+        }
+      } else {
+        this.checkComprovante = !this.checkComprovante
+      }
+    } else {
+      this.checkComprovante = !this.checkComprovante
     }
+
   }
 
   cleanFilesProcuracao() {
     this.checkProcuracao = !this.checkProcuracao
-    if (!this.checkProcuracao) {
-      ELEMENT_DATA_PROCURACAO.splice(0, ELEMENT_DATA_PROCURACAO.length)
-      this.filesProcuracao.splice(0, this.filesProcuracao.length)
-      this.refreshTableSorceFileProcuracao()
+    if (this.filesProcuracao.length > 0) {
+      if (!this.checkProcuracao) {
+        if (confirm(" Ao desmarcar os checkbox, os arquivos serão apagados")) {
+
+          if (!this.checkProcuracao) {
+            ELEMENT_DATA_PROCURACAO.splice(0, ELEMENT_DATA_PROCURACAO.length)
+            this.filesProcuracao.splice(0, this.filesProcuracao.length)
+            this.refreshTableSorceFileProcuracao()
+            this.checkProcuracao = !this.checkProcuracao
+          }
+        }
+        else {
+          this.checkProcuracao = false
+        }
+      } else {
+        this.checkProcuracao = !this.checkProcuracao
+      }
+    } else {
+      this.checkProcuracao = !this.checkProcuracao
     }
   }
 
   cleanFilesQsc() {
     this.checkQsc = !this.checkQsc
-    if (!this.checkQsc) {
-      ELEMENT_DATA_QSC.splice(0, ELEMENT_DATA_QSC.length)
-      this.filesQsc.splice(0, this.filesQsc.length)
-      this.refreshTableSorceFileQsc()
+    if (this.filesQsc.length > 0) {
+      if (!this.checkQsc) {
+        if (confirm(" Ao desmarcar os checkbox, os arquivos serão apagados")) {
+
+          if (!this.checkQsc) {
+            ELEMENT_DATA_QSC.splice(0, ELEMENT_DATA_QSC.length)
+            this.filesQsc.splice(0, this.filesQsc.length)
+            this.refreshTableSorceFileQsc()
+            this.checkQsc = !this.checkQsc
+          }
+        }
+        else {
+          this.checkQsc = false
+        }
+      } else {
+        this.checkQsc = !this.checkQsc
+      }
+    } else {
+      this.checkQsc = !this.checkQsc
     }
   }
 
@@ -380,7 +443,7 @@ export class SecaoCComponent implements OnInit {
   }
   showInfoArquivos(info: any) {
     this.infoArquivo = info
-    
+
   }
 
   deletAcionario(element) {
@@ -391,7 +454,7 @@ export class SecaoCComponent implements OnInit {
 
     }
     this.refreshTableSorce()
-    
+
 
   }
   questionIsFilled(questao: any) {
@@ -404,9 +467,9 @@ export class SecaoCComponent implements OnInit {
       return false
     }
   }
-  
-  salvarObjeto(){
-    this.secao_c.societarias.fileIndexes.checkProcuracao =this.checkProcuracao
+
+  salvarObjeto() {
+    this.secao_c.societarias.fileIndexes.checkProcuracao = this.checkProcuracao
     this.secao_c.societarias.fileIndexes.checkDocumento = this.checkDocumento
     this.secao_c.societarias.fileIndexes.checkQsc = this.checkQsc
     this.secao_c.societarias.fileIndexes.checkComprovante = this.checkComprovante
@@ -421,7 +484,7 @@ export class SecaoCComponent implements OnInit {
   getSecaoC() {
     this.salvarObjeto()
     this.mudouValor.emit({ secao_c: this.secao_c })
-    
+
     //this.change.markForCheck();
 
   }
