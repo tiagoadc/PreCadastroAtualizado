@@ -441,7 +441,9 @@ export class Validate {
             if (this.formularioObj.etica.jaPrestouServicos.justificativa == '')
                 this.revisarCampos.push("Seção D Campo de justificativa em Branco das Questoes Éticas-- ")
 
-        if (this.formularioObj.segurancaInformacao.dadoInseridoNaPlataforma == 'true')
+        
+            
+        if (this.formularioObj.segurancaInformacao.dadoInseridoNaPlataforma == 'true'){
             if (this.formularioObj.segurancaInformacao.quaisDadosProcessados == '')
                 this.revisarCampos.push("Seção E Campo de justificativa em Branco das Questoes de segurança da informação-- ")
 
@@ -471,6 +473,7 @@ export class Validate {
         if (this.formularioObj.segurancaInformacao.fileIndexes.checkDocumento == true)
             if (this.formularioObj.segurancaInformacao.fileIndexes.contrato.length <= 0)
                 this.revisarCampos.push("Seção E Faltando documento contrato de Prestação de Serviços de software-- ")
+            }
 
         if (this.formularioObj.responsavelPreenchimento == '')
             this.revisarCampos.push("Seção F Compo de responsavel pelo preenchimento em branco-- ")

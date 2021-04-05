@@ -75,8 +75,6 @@ export class SecaoCComponent implements OnInit {
 
   @Output() mudouValor = new EventEmitter();
 
-
-
   filesDocumento: any = []
   filesComprovante: any = []
   filesProcuracao: any = []
@@ -133,6 +131,12 @@ export class SecaoCComponent implements OnInit {
     )
 
   }
+  getSecaoC() {
+    this.salvarObjeto()
+    this.mudouValor.emit({ secao_c: this.secao_c })
+    //this.change.markForCheck();
+  }
+  
   // ------ display acionarios ------
   openDialog(): void {
     const dialogRef = this.dialog.open(DialogComponent, {
@@ -481,12 +485,6 @@ export class SecaoCComponent implements OnInit {
     this.secao_c.societarias.fileIndexes.qsc = this.filesQsc
   }
 
-  getSecaoC() {
-    this.salvarObjeto()
-    this.mudouValor.emit({ secao_c: this.secao_c })
-
-    //this.change.markForCheck();
-
-  }
+  
 }
 

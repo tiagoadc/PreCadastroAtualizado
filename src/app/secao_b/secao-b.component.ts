@@ -20,16 +20,16 @@ export class SecaoBComponent implements OnInit {
   }
   
 
-  getSecaoB(){
-    this.mudouValor.emit({secao_b: this.secao_b})
-  }
-
+  
   constructor(private apiService: ApiService) { }
 
   ngOnInit(): void {
     this.apiService.emitirSecao.subscribe(
       ()=> this.getSecaoB()
     )
+  }
+  getSecaoB(){
+    this.mudouValor.emit({secao_b: this.secao_b})
   }
 
   
